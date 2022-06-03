@@ -6,8 +6,9 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class UserViewModel(private val userRepository: UserRepository):ViewModel() {
+class UserViewModel:ViewModel() {
     val userData:MutableLiveData<Response<List<UserDataItem>>> = MutableLiveData()
+    private val userRepository : UserRepository = UserRepository()
 
     fun getUserData() = viewModelScope.launch {
         val response = userRepository.getUser()

@@ -3,12 +3,11 @@ package com.example.databinding
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.databinding.databinding.ActivityMainBinding
 import com.example.databinding.databinding.UserDataItemBinding
 
 class RecyclerAdapter(var usersList:List<UserDataItem>):RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-    class ViewHolder(private val binding: UserDataItemBinding):RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(private val binding: UserDataItemBinding):RecyclerView.ViewHolder(binding.root){
         fun onBind(users:UserDataItem){
             binding.users = users
         }
